@@ -15,27 +15,14 @@ def idToHash(n):
     shorturl = rev(shorturl)
     return shorturl
 
-def hashToId(surl):
-    ts = 0
-    for i in surl:
-        if("A"<=i and i<="F"):
-            ts = ts*256 + ord(i) - ord('A')
-        if("0"<=i and i<="9"):
-            ts = ts*256 + ord(i) - ord('0') + 6;
-    return ts
-
-nowt = str(datetime.datetime.now())
-print(nowt)
-i = 0
-x = ""
-while len(x)<14:
-    if(nowt[i]>="0" and nowt[i]<="9"):
-        x=x+nowt[i];
-    i=i+1
-print("TimeStamp : ",x)
-n = int(x)
-url = idToHash(n)
-print("ShortURL : ",url)
-#ts = hashToId(url)
-#print(ts)
+##def getHash(nowt):
+##    i = 0
+##    x = ""
+##    while len(x)<14:
+##        if(nowt[i]>="0" and nowt[i]<="9"):
+##            x=x+nowt[i];
+##        i=i+1
+##    n = int(x)
+##    url = idToHash(n)
+##    return url
 
