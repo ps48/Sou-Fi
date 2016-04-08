@@ -1,0 +1,19 @@
+
+{% load staticfiles %}
+<html>
+	<head>
+		<title>Send Message</title>		
+		<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	</head>
+	<body>
+		<div class="page-header">
+			<h4>Type message you want to send</h4>
+		</div>
+		<div>
+			<form method="POST" class = "post-form">{% csrf_token %}
+				{{ form.as_p }}
+				<button type="submit">Send</button>
+			</form>
+		</div>
+	</body>
+</html>

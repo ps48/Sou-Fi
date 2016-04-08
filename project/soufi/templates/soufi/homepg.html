@@ -1,0 +1,25 @@
+{% load staticfiles %}
+<html>
+	
+	<head>
+		<title>Welcome</title>
+		<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	</head>
+
+	<body>
+		<div class = "page-header">
+			<h3><a href = "{% url 'send_msg' %}">Click here to send msg</a></h3>
+		</div>
+		<div class="post">
+	       	{% for mesg in msgs %}
+				<p>timestamp: {{ mesg.ts }}</p>
+				<p>message: {{ mesg.msg }}</p>
+				<p>hashkey: {{ mesg.hashkey }}</p>
+			{% endfor %}
+        </div>
+		<!--
+		<audio controls>
+			<source src="sounds.mp3" type="audio/mpeg">
+		</audio> -->
+	</body>
+</html>
