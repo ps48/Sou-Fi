@@ -1,0 +1,20 @@
+<html>
+<head>
+	<title>Soufi</title>
+	<h2>send msg</h2>
+</head>
+
+
+<body>
+<form action="{{ url_for('send_play')}}" method = 'post'>
+
+<input type="text" name='msg'> </input>
+<input type='submit' value='Send'></input>
+
+
+</form>
+
+<a href = '{{url_for('index')}}'> Home </a>
+</body>
+
+</html>

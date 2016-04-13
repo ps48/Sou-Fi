@@ -1,0 +1,16 @@
+<html>
+<head>
+	<title>Soufi</title>
+	<h2>send play</h2>
+</head>
+
+
+<body>
+	{{msg}} {{hashkey}} 
+	 <audio controls>
+	  <source src="{{ url_for('static', filename = 'sounds.wav') }}" type="audio/wave">
+	Your browser does not support the audio element.
+	</audio> 
+</body>
+
+</html>

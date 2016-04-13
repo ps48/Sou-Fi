@@ -15,6 +15,18 @@ def idToHash(n):
     shorturl = rev(shorturl)
     return shorturl
 
+# ts = datetime.datetime.now()
+# nowt = str(ts)
+# i = 0
+# ts = ""
+# while len(ts)<14:
+#     if(nowt[i]>="0" and nowt[i]<="9"):
+#         ts=ts+nowt[i];
+#     i=i+1
+# n = int(ts)
+# hashkey = idToHash(n)
+# print hashkey
+
 ##def getHash(nowt):
 ##    i = 0
 ##    x = ""
