@@ -15,7 +15,7 @@ class Msgkey(Base):
     name = Column(String(250), nullable=False)
 
 
-engine = create_engine('sqlite:///soufi.db')
 
-
-Base.metadata.create_all(engine)
+if __name__ == '__main__':
+    engine = create_engine('sqlite:///soufi.db')
+    Base.metadata.create_all(engine)
