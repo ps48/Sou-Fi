@@ -1,13 +1,51 @@
 <html>
 <head>
-	<title>Soufi</title>
-	<h2>Soufi</h2>
+	<link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}" type="text/css">
+	<title>Sou-Fi</title>
+	<style type="text/css">
+		#intro {
+			height: 500px;
+			width: 700px;
+			float: left;
+			padding: 5px;
+			margin-top: 60px;
+		}
+		.sendrcv {
+			margin-left: 900px;
+			margin-top: 80px;
+			background-color: #30231d;
+			width: 300px;
+			text-align: center;
+		}
+		a:link {color: white;}
+		a:visited {color: white;}
+		a:active {color: white;}
+		a:hover {color: white;}
+		a {text-decoration: none;}
+	</style>
 </head>
-
-
 <body>
-	<a href={{ url_for('send_msg') }}> Send Msg </a>
-	<a href={{ url_for('rec_msg')}}> Rec. Msg </a>
+	<div class="header">
+		<br>
+		<h1>Sou-Fi</h1>
+		<br>
+	</div>
+	<br><br>
+	<div id = "intro">
+		<p style = "text-align: justify">Wireless communication is one of most popular and trending communication model. Wireless connectivity has been established by means of various Electromagnetic waves, but the use of sound waves for wireless communication is yet a territory untouched. DTMF (Dual Tone Multi Frequencies) have already been used for wired communication in form of telephone lines. In this project, we aim at implementing a real time wireless communication system which uses DTMF tones in order to exchange data. Data to be transferred is stored in the database with a hashed key, this key is then converted into combination of DTMF tones and transferred in form of sound waves. Once, the receiver receives the signal, it uses Goertzel’s algorithm in order to convert the tone into the specified hashed key value. In the end, the receiver converts the hashed key into the original data. This technology can be used for secure and wireless broadcast within earshot range. Its applications range from building small chat servers to wireless home automation systems.</p>
+	</div>
+	<div class="sendrcv">
+		<br>
+		<a href={{ url_for('send_msg') }} > Click here to Send Message </a>
+		<br><br>
+	</div>
+	<br>
+	<div class="sendrcv">
+		<br>
+		<a href={{ url_for('rec_msg')}}> Click here to Recieve Message </a>
+		<br><br>
+	</div>
+	
 </body>
 
 </html>

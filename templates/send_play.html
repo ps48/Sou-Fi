@@ -1,12 +1,19 @@
 <html>
-<head>
+<head> 
+	<link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}" type="text/css">
 	<title>Soufi</title>
-	<h2>send play</h2>
+	
 </head>
 
 
 <body>
-	{{msg}} {{hashkey}} 
+	<div class="header">
+		<br>
+		<h1>Play to Send Message</h1>
+		<br>
+	</div>
+	<p> Message Sent: {{msg}} </p><br>
+		<!--{{hashkey}}--> 
 	 <audio controls>
 	  <source src="{{ url_for('static', filename = 'sounds.wav') }}" type="audio/wave">
 	Your browser does not support the audio element.

@@ -62,9 +62,17 @@ def rec_hash():
 		print os.system(cmd)
 		dtmf = DTMFdetector()
 		data = dtmf.getDTMFfromWAV("ns2.wav")
-		msg_val = session.query(Msgkey).filter_by(hash_key=data).one()
-		# return render_template('rec_hash.html',msg = base)
-		return msg_val.name
+		
+		new_str="%"
+		for i in range(len(data)):
+			new_str=new_str+data[i]+"%"
+
+		try:
+			msg_val = session.query(Msgkey).filter(Msgkey.hash_key.like(new_str)).one()
+			# return render_template('rec_hash.html',msg = base)
+			return msg_val.name
+		except:
+			return data
 
 
 if __name__ == '__main__':

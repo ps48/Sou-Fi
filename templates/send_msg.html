@@ -1,20 +1,38 @@
 <html>
 <head>
+	<link rel="stylesheet" href="{{ url_for('static',filename = 'style.css') }}" type="text/css">
 	<title>Soufi</title>
-	<h2>send msg</h2>
+	<style type="text/css">
+		#sendbut {
+			background-color: #30231d;
+			color: white;
+			padding: 15px 32px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			margin: 4px 2px;
+			cursor: pointer;
+			font-size: 14px; 
+		}
+	</style>
 </head>
 
 
 <body>
-<form action="{{ url_for('send_play')}}" method = 'post'>
+	<div class="header">
+		<br>
+		<h1>Send Message</h1>
+		<br>
+	</div>
+	<br><br>
+	<form action="{{ url_for('send_play')}}" method = 'post'>
+	<!--<input style = "width:100%;" type="text" rows="10" name='msg'> </input>-->
+		<textarea name='msg' rows="10" style="width:100%"></textarea>
+		<br><br>
+		<input type='submit' value='Send' id="sendbut"></input>
+	</form>
 
-<input type="text" name='msg'> </input>
-<input type='submit' value='Send'></input>
-
-
-</form>
-
-<a href = '{{url_for('index')}}'> Home </a>
+	<!--<a href = '{{url_for('index')}}'> Home </a>-->
 </body>
 
 </html>
