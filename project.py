@@ -23,10 +23,12 @@ def index():
 	return render_template('home.html')
 
 @app.route('/sender/msg')
+@nocache
 def send_msg():
 	return render_template('send_msg.html')
 
 @app.route('/receive/msg')
+@nocache
 def rec_msg():
 	return render_template('rec_msg.html')
 
@@ -52,6 +54,7 @@ def send_play():
 		return render_template('send_play.html',msg = request.form['msg'],hashkey=hashkey)
 
 @app.route('/receive/hash', methods=['GET', 'POST'])
+@nocache
 def rec_hash():
 	if request.method == 'POST':
 		base= request.form['sound']

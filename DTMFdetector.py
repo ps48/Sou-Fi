@@ -179,7 +179,7 @@ class DTMFdetector(object):
 			# print ("curr char:", currentChar, "time delta:", timeDelta) #for debugging
 			
 			#check if this is the same char as last time
-			if lastChar == currentChar and currentCount<25:
+			if lastChar == currentChar and currentCount<=30:
 				currentCount+=1
 			else:
 				#some times it seems we'll get a stream of good input, then some erronous input
