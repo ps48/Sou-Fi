@@ -31,7 +31,7 @@ def rec_msg():
 	return render_template('rec_msg.html')
 
 @app.route('/sender/play', methods=['GET', 'POST'])
-@no_cache
+@nocache
 def send_play():
 	if request.method == 'POST':
 		ts = datetime.datetime.now()
