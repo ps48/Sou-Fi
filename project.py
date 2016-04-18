@@ -30,6 +30,7 @@ def rec_msg():
 	return render_template('rec_msg.html')
 
 @app.route('/sender/play', methods=['GET', 'POST'])
+@no_cache
 def send_play():
 	if request.method == 'POST':
 		ts = datetime.datetime.now()
@@ -62,7 +63,7 @@ def rec_hash():
 		print os.system(cmd)
 		dtmf = DTMFdetector()
 		data = dtmf.getDTMFfromWAV("ns2.wav")
-		
+
 		new_str="%"
 		for i in range(len(data)):
 			new_str=new_str+data[i]+"%"
